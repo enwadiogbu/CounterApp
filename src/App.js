@@ -1,18 +1,22 @@
 import './App.css';
+import { useState } from 'react';
 
-
-function counter(){
-  alert('You clicked Me!');
-}
 
 function App() {
-  const myAge = 20;
+  const [count, setCount] = useState(20);
 
   return (
-    <>
-      <h2 style={{color: 'red'}}>Hello, I am {myAge}</h2>
-      <button onClick={() => alert('You clicked the + button')}>+</button>
-      <button onClick={() => alert('You clicked the - button')}>-</button>
+    // using Fragments instead of a div
+    <> 
+      <h2 style={{color: 'whitesmoke'}}>COUNTER APP</h2>
+      <h1 style={{color: 'red'}}>{count}</h1>
+      
+      <button onClick={() => {
+        setCount(count + 1);
+      }}>+</button>
+      <button onClick={() => {
+        setCount(count - 1);
+      }}>-</button>
     </>
 
     
